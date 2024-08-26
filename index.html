@@ -10,7 +10,7 @@
 </head>
 <body>
    <div class="container">
-      <table>
+      <table id="myTable">
          <thead>
             <tr>
                <th>Показатель</th>
@@ -26,11 +26,13 @@
                <td class="positively">480 521 <span class="change-green">4%</span></td>
                <td class="negative">4 805 121</td>
             </tr>
-            <tr>
+            <!-- <tr>
                <td class="chart" colspan="4">
-                  <div id="chartContainer"></div>
+                  <div id="chartContainer">
+                     
+                  </div>
                </td>
-            </tr>
+            </tr> -->
             <tr>
                <td>Наличные</td>
                <td class="today">300 000</td>
@@ -87,8 +89,9 @@
              </tr>
          </tbody>
       </table>
+      <div id="chartContainer"></div>
    </div>
    <script src="https://code.highcharts.com/highcharts.js"></script>
-   <script src="./js/script.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>
