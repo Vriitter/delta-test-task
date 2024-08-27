@@ -14,6 +14,8 @@ const data = [
    { name: 'Количество гостей', values: [34, 36, 32]}
 ];
 
+let currentChartRow = null; 
+
 table.addEventListener('click', (event) => {
    if (event.target.tagName === 'TD') {
       const row = event.target.parentElement;
@@ -21,15 +23,62 @@ table.addEventListener('click', (event) => {
 
       const productData = data.find(item => item.name === productName);
 
-      Highcharts.chart('chartContainer', {
-         chart: { type: 'line' },
-         title: { text: productName },
-         xAxis: { categories: ['Текущий день', 'Вчера', 'Этот день недели'] },
-         yAxis: { title: { text: '' } },
-         series: [{
-           name: productName,
-           data: productData.values
-         }]
-       });
+      if (currentChartRow) {
+         currentChartRow.nextSibling.remove(); 
+         currentChartRow = null;
+      } else {
+         const chartRow = document.createElement('tr');
+         chartRow.style.height = '300px'; 
+
+         const chartCell = document.createElement('td');
+         chartCell.colSpan = 4;
+         chartCell.style.padding = '0px';
+
+         const chartDiv = document.createElement('div');
+         chartDiv.style.width = '100%';
+         chartDiv.style.height = '100%';
+         chartDiv.id = 'chart';
+
+         chartCell.appendChild(chartDiv);
+         chartRow.appendChild(chartCell);
+
+         row.parentNode.insertBefore(chartRow, row.nextSibling);
+
+         setTimeout(() => {
+            if (chartDiv.offsetWidth > 0) {
+               Highcharts.chart('chart', {
+                  chart: { type: 'line' },
+                  title: 'none',
+                  xAxis: { 
+                     categories: ['Текущий день', 'Вчера', 'Этот день недели'],
+                     labels: {
+                        enabled: false
+                      }
+                  },
+                  yAxis: { 
+                     title: { text: '' },
+                     gridLineWidth: 0, 
+                     lineColor: '#000',
+                     lineWidth: 1,
+                     labels: {
+                        enabled: false
+                     }
+                  },
+                  series: [{
+                     name: '', 
+                     data: productData.values,
+                     showInLegend: false,
+                     lineWidth: 3,
+                     color: '#42A43D',
+                     marker: { 
+                        radius: 5
+                      }  
+                  }],
+                });
+            }
+         }, 10); 
+         currentChartRow = row; 
+      }
    }
 });
+
