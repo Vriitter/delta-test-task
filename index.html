@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>DELTA Тестовое задание</title>
+   <link rel="stylesheet" href="./css/reset.css">
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="icon" href="./favicon/favicon.ico">
+</head>
+<body>
+   <div class="container">
+      <table id="myTable">
+         <thead>
+            <tr>
+               <th>Показатель</th>
+               <th class="today">Текущий день</th>
+               <th>Вчера</th>
+               <th>Этот день недели</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Выручка, руб</td>
+               <td class="today">500 521</td>
+               <td class="positively">480 521 <span class="change-green">4%</span></td>
+               <td class="negative">4 805 121</td>
+            </tr>
+            <tr>
+               <td>Наличные</td>
+               <td class="today">300 000</td>
+               <td>300 000 <span class="change-green">0%</span></td>
+               <td>300 000</td>
+             </tr>
+             <tr>
+               <td>Безналичный расчет</td>
+               <td class="today">100 000</td>
+               <td>100 000 <span class="change-green"">0%</span></td>
+               <td>100 000</td>
+             </tr>
+             <tr>
+               <td>Кредитные карты</td>
+               <td class="today">100 521</td>
+               <td>100 521 <span class="change-green">0%</span></td>
+               <td>100 521</td>
+             </tr>
+             <tr>
+               <td>Средний чек, руб</td>
+               <td class="today">1 300</td>
+               <td class="positively">900 <span class="change-green"">44%</span></td>
+               <td class="positively">900</td>
+             </tr>
+             <tr>
+               <td>Средний гость, руб</td>
+               <td class="today">1 200</td>
+               <td class="positively">800 <span class="change-green"">50%</span></td>
+               <td class="positively">800</td>
+             </tr>
+             <tr>
+               <td>Удаления из чека (после оплаты), руб</td>
+               <td class="today">1 000</td>
+               <td class="negative">1 100 <span class="change-red">-9%</span></td>
+               <td class="positively">900</td>
+             </tr>
+             <tr>
+               <td>Удаления из чека (до оплаты), руб</td>
+               <td class="today">1 300</td>
+               <td>1 300 <span class="change-green">0%</span></td>
+               <td class="positively">900</td>
+             </tr>
+             <tr>
+               <td>Количество чеков</td>
+               <td class="today">34</td>
+               <td class="negative">36 <span class="change-red">-6%</span></td>
+               <td>34</td>
+             </tr>
+             <tr>
+               <td>Количество гостей</td>
+               <td class="today">34</td>
+               <td class="negative">36 <span class="change-red">-6%</span></td>
+               <td class="positively">32</td>
+             </tr>
+         </tbody>
+      </table>
+   </div>
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
