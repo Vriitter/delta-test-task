@@ -2,15 +2,8 @@ html {
    box-sizing: border-box;
 }
 
-*,
-*::after,
-*::before {
-   box-sizing: inherit;
-}
-
 body {
    font-family: sans-serif;
-   font-size: 16px;
    font-weight: 600;
    color: rgb(132, 131, 131);
 }
@@ -49,7 +42,7 @@ tr td:first-child {
    background-color: rgba(11, 239, 117, 0.2);
 }
 
-.negative{
+.negative {
    background-color: rgba(255, 0, 0, 0.2);
 }
 
@@ -65,7 +58,4 @@ span {
    color: red;
 }
 
-.chart {
-   padding: 0;
-}
 
